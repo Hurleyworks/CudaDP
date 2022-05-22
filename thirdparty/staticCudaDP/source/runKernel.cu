@@ -1,6 +1,7 @@
 #include "runKernel.h"
 
 __global__ void parent_k (void);
+//__global__ ParentKernel ();
 
 int runKernel (int digit)
 {
@@ -14,7 +15,7 @@ int runKernel (int digit)
         cuCtxSetCurrent (cuContext);
 
         parent_k<<<2, 2>>>();
-
+       // ParentKernel<<<8, 32>>> ();
         checkCudaErrors (cudaGetLastError());
         checkCudaErrors (cudaDeviceSynchronize());
     }

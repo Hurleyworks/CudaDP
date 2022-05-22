@@ -27,4 +27,4 @@ end
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "g3log"
-include "cudaDP"
+include "staticCudaDP"

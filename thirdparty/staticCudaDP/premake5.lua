@@ -1,7 +1,7 @@
 
 local ROOT = "../"
 
-project "cudaDP"
+project "staticCudaDP"
 kind "StaticLib"
     language "C++"
 	flags { "MultiProcessorCompile", "NoMinimalRebuild" }
@@ -30,10 +30,10 @@ kind "StaticLib"
 	}
 	
 -- Add necessary build customization using standard Premake5
-buildcustomizations "BuildCustomizations/CUDA 11.6"
+buildcustomizations "BuildCustomizations/CUDA 11.7"
 
 -- CUDA specific properties
-cudaFiles {"cudaDP/" .. SOURCE_DIR .. "/**.cu"} -- files NVCC compiles
+cudaFiles {"staticCudaDP/" .. SOURCE_DIR .. "/**.cu"} -- files NVCC compiles
 cudaMaxRegCount "32"
 
 -- Let's compile for all supported architectures (and also in parallel with -t0)

@@ -13,9 +13,9 @@ local ROOT = "../"
 	local THIRD_PARTY_DIR = "../thirdparty/"
 	local MODULE_DIR = "../modules/"
 	
-	local CUDA_INCLUDE_DIR = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/include"
-	local CUDA_EXTRA_DIR = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/extras/cupti/include"
-	local CUDA_LIB_DIR =  "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/lib/x64"
+	local CUDA_INCLUDE_DIR = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/include"
+	local CUDA_EXTRA_DIR = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/extras/cupti/include"
+	local CUDA_LIB_DIR =  "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/lib/x64"
 	
 	includedirs
 	{
@@ -28,7 +28,7 @@ local ROOT = "../"
 		
 		THIRD_PARTY_DIR,
 		THIRD_PARTY_DIR .. "g3log/src",
-		THIRD_PARTY_DIR .. "cudaDP/source",
+		THIRD_PARTY_DIR .. "staticCudaDP/source",
 	}
 	
 	targetdir (ROOT .. "builds/bin/" .. outputdir .. "/%{prj.name}")
@@ -55,7 +55,7 @@ local ROOT = "../"
 		{ 
 			"Core",
 			"g3log",
-			"cudaDP",
+			"staticCudaDP",
 			
 			--cuda
 			"cudart_static",
@@ -80,7 +80,7 @@ local ROOT = "../"
 		{ 
 			"Core",
 			"g3log",
-			"cudaDP",
+			"staticCudaDP",
 			
 			--cuda
 			"cudart_static",
