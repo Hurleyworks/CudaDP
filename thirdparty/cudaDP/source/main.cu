@@ -1,5 +1,5 @@
 ﻿#include <cuda.h>
-#include <cudaDP/source/runKernel.h>
+#include "runKernel.h"
 
 int callKernel (int digit)
 {

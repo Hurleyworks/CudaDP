@@ -26,23 +26,8 @@ project  "HelloCudaDP"
 	{
 	
 	}
-	
-	-- Add necessary build customization using standard Premake5
-buildcustomizations "BuildCustomizations/CUDA 11.6"
 
--- CUDA specific properties
-cudaFiles {"sandbox/HelloCudaDP/" .. SOURCE_DIR .. "*.cu"} -- files NVCC compiles
-cudaMaxRegCount "32"
-
--- Let's compile for all supported architectures (and also in parallel with -t0)
-cudaCompilerOptions {"-arch=sm_75", 
-                     "-gencode=arch=compute_75,code=sm_75", 
-					 "--extended-lambda",
-                      "-t0"}                      
-
-	
 	filter "system:windows"
-		cudaRelocatableCode "On"
 		staticruntime "On"
 		systemversion "latest"
 		defines {"_CRT_SECURE_NO_WARNINGS", "__WINDOWS_WASAPI__", "NOMINMAX",
