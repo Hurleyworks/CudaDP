@@ -66,6 +66,7 @@ local ROOT = "../"
 			"curand",
 			"cusolver",
 			"cudart",
+			"cudadevrt",
 		
 		}
 		defines { "DEBUG", "USE_DEBUG_EXCEPTIONS", "EIGEN_NO_DEBUG" }
@@ -90,6 +91,7 @@ local ROOT = "../"
 			"curand",
 			"cusolver",
 			"cudart",
+			"cudadevrt",
 		
 		}
 		defines { "NDEBUG", }
