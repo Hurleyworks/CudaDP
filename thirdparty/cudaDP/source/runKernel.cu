@@ -11,7 +11,7 @@ int runKernel (int digit)
     cuCtxCreate (&cuContext, 0, 0);
     cuCtxSetCurrent (cuContext);
 
-    parent_k<<<1, 1>>>();
+    parent_k<<<2, 2>>>();
     cudaDeviceSynchronize();
     return 0;
 }
