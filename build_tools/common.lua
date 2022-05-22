@@ -4,7 +4,6 @@ local ROOT = "../"
 	language "C++"
 
 	defines{
-		
 	}
 
 	flags { "MultiProcessorCompile", "NoMinimalRebuild" }
@@ -69,7 +68,7 @@ local ROOT = "../"
 			"cudadevrt",
 		
 		}
-		defines { "DEBUG", "USE_DEBUG_EXCEPTIONS", "EIGEN_NO_DEBUG" }
+		defines { "DEBUG", "USE_DEBUG_EXCEPTIONS", }
 		symbols "On"
 		libdirs { THIRD_PARTY_DIR .. "builds/bin/" .. outputdir .. "/**",
 				  ROOT .. "builds/bin/" .. outputdir .. "/**",

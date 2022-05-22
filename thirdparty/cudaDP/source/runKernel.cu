@@ -14,13 +14,14 @@ int runKernel (int digit)
         cuCtxSetCurrent (cuContext);
 
         parent_k<<<2, 2>>>();
+
         checkCudaErrors (cudaGetLastError());
-        checkCudaErrors(cudaDeviceSynchronize());
+        checkCudaErrors (cudaDeviceSynchronize());
     }
     catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
-    
+
     return 0;
 }

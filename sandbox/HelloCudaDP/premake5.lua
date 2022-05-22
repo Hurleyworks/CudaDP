@@ -31,7 +31,6 @@ project  "HelloCudaDP"
 		staticruntime "On"
 		systemversion "latest"
 		defines {"_CRT_SECURE_NO_WARNINGS", "__WINDOWS_WASAPI__", "NOMINMAX",
-				  "NANOGUI_USE_OPENGL", "NANOGUI_GLAD",
 		}
 		
 		disablewarnings { "5030" , "4305", "4316", "4267"}
@@ -49,8 +48,6 @@ project  "HelloCudaDP"
 		  },
 		}
 		
-	
- 
 
 		
 -- add settings common to all project
