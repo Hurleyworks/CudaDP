@@ -1,9 +1,5 @@
 #pragma once
 
-// a man's reach should exceed his grasp
-// Words from a poem by Robert Browning, suggesting that, to achieve anything worthwhile,
-// a person should attempt even those things that may turn out to be impossible.
-
 #include <unordered_map>
 #include <unordered_set>
 #include <array>
@@ -35,7 +31,6 @@
 // NO MORE TRACING  Yay
 #define TRACE(x)
 
-
 // g3log
 #include <g3log/g3log.hpp>
 #include <g3log/logworker.hpp>
@@ -46,8 +41,6 @@
 
 namespace mace
 {
-	#include "excludeFromBuild/basics/StringUtil.h"
-	
+#include "excludeFromBuild/basics/StringUtil.h"
 
 } // namespace mace
-
