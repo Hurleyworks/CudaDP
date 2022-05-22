@@ -4,14 +4,23 @@ __global__ void parent_k (void);
 
 int runKernel (int digit)
 {
-    CUcontext cuContext;
-    int cuDeviceCount = 0;
-    cuInit (0);
-    cuDeviceGetCount (&cuDeviceCount);
-    cuCtxCreate (&cuContext, 0, 0);
-    cuCtxSetCurrent (cuContext);
+    try
+    {
+        CUcontext cuContext;
+        int cuDeviceCount = 0;
+        CUDADRV_CHECK (cuInit (0));
+        CUDADRV_CHECK (cuDeviceGetCount (&cuDeviceCount));
+        CUDADRV_CHECK (cuCtxCreate (&cuContext, 0, 0));
+        cuCtxSetCurrent (cuContext);
 
-    parent_k<<<2, 2>>>();
-    cudaDeviceSynchronize();
+        parent_k<<<2, 2>>>();
+        checkCudaErrors (cudaGetLastError());
+        checkCudaErrors(cudaDeviceSynchronize());
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    
     return 0;
 }

@@ -5,12 +5,16 @@
 __global__ void child_k (void)
 {
     printf ("************* Hello from the child_k!\n");
+
+    __syncthreads();
 }
 
 __global__ void parent_k (void)
 {
-    printf ("***************** Hello from the parent_k!\n");
+    printf ( "********Hello from the parent_k!\n");
 
     // this causes a cudaLaunchKernel cudaErrorInvalidSource(300) error
-    //child_k<<<2, 2>>>();
+    child_k<<<2, 2>>>();
+
+    __syncthreads();
 }

@@ -1,4 +1,4 @@
-﻿#include <cuda.h>
+﻿
 #include "runKernel.h"
 
 int callKernel (int digit)
