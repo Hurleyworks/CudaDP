@@ -7,12 +7,12 @@ int callKernel (int digit);
 class Application : public Jahley::App
 {
  public:
-    Application () :
+    Application() :
         Jahley::App()
     {
         try
         {
-            LOG(DBUG) << "Hello from CPU!";
+            LOG (DBUG) << "Hello from CPU!";
 
             callKernel (6);
         }

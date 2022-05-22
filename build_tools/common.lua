@@ -4,9 +4,7 @@ local ROOT = "../"
 	language "C++"
 
 	defines{
-		"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED", "OIIO_STATIC_DEFINE", "__TBB_NO_IMPLICIT_LINKAGE",
-		--"_NEWTON_STATIC_LIB", "_CUSTOM_JOINTS_STATIC_LIB", "_DVEHICLE_STATIC_LIB",
-		"_D_CORE_DLL","_D_TINY_DLL","_D_NEWTON_DLL","_D_COLLISION_DLL"
+		
 	}
 
 	flags { "MultiProcessorCompile", "NoMinimalRebuild" }
@@ -50,8 +48,6 @@ local ROOT = "../"
 			"WIN32", "_WINDOWS",
 			--https://github.com/KjellKod/g3log/issues/337
 			"_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING",
-			--"LITTLE_ENDIAN","__WINDOWS__",
-			"NANOGUI_USE_OPENGL", "NANOGUI_GLAD",
 		}
 		
 	filter "configurations:Debug"
@@ -70,7 +66,6 @@ local ROOT = "../"
 			"curand",
 			"cusolver",
 			"cudart",
-			"cudnn",
 		
 		}
 		defines { "DEBUG", "USE_DEBUG_EXCEPTIONS", "EIGEN_NO_DEBUG" }
@@ -95,10 +90,9 @@ local ROOT = "../"
 			"curand",
 			"cusolver",
 			"cudart",
-			"cudnn",
 		
 		}
-		defines { "NDEBUG", "EIGEN_NO_DEBUG" }
+		defines { "NDEBUG", }
 		optimize "On"
 		libdirs { THIRD_PARTY_DIR .. "builds/bin/" .. outputdir .. "/**",
 				  ROOT .. "builds/bin/" .. outputdir .. "/**",

@@ -32,8 +32,7 @@ local ROOT = "../../"
 project "Core"
     kind "StaticLib"
     language "C++"
-	defines {  "JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED", "NANOVG_GL3", "_ENABLE_EXTENDED_ALIGNED_STORAGE",
-			"__TBB_NO_IMPLICIT_LINKAGE", "OIIO_STATIC_DEFINE"}
+	
 	flags { "MultiProcessorCompile", "NoMinimalRebuild" }
 	
 	if _ACTION == "vs2019" then
@@ -97,11 +96,10 @@ project "Core"
 		defines 
 		{ 
 			"_CRT_SECURE_NO_WARNINGS",
-			"__WINDOWS_WASAPI__",
+			--"__WINDOWS_WASAPI__",
 			--https://github.com/KjellKod/g3log/issues/337
 			"_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING",
 			"_USE_MATH_DEFINES", "NOMINMAX",
-			"NANOGUI_USE_OPENGL", "NANOGUI_GLAD",
 		}
 		
 		 -- setting up visual studio filters (basically virtual folders).

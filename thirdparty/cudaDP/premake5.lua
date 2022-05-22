@@ -22,7 +22,7 @@ kind "StaticLib"
 	local SOURCE_DIR = "source/"
 	files
     { 
-      "source/src/runKernel.h"
+      "source/runKernel.h"
     }
 	includedirs
 	{

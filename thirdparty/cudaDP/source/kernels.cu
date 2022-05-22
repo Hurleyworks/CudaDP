@@ -10,7 +10,7 @@ __global__ void child_k (void)
 __global__ void parent_k (void)
 {
     printf ("***************** Hello from the parent_k!\n");
-  // child_k<<<1, 1>>>();
 
-    // cudaDeviceSynchronize();
+    // this causes a cudaLaunchKernel cudaErrorInvalidSource(300) error
+    // child_k<<<1, 1>>>();
 }

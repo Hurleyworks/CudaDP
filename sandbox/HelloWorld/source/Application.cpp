@@ -5,12 +5,12 @@ const std::string APP_NAME = "HelloWorld";
 class Application : public Jahley::App
 {
  public:
-    Application () :
+    Application() :
         Jahley::App()
     {
         try
         {
-            LOG(DBUG) << "Hello world!";
+            LOG (DBUG) << "Hello world!";
         }
         catch (std::exception& e)
         {
