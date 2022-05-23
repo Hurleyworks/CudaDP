@@ -1,6 +1,6 @@
 local ROOT = "../../"
 
-project  "HelloCuda"
+project  "HelloCudaDP"
 	if _ACTION == "vs2019" then
 		cppdialect "C++17"
 		location (ROOT .. "builds/VisualStudio2019/projects")
@@ -31,7 +31,7 @@ project  "HelloCuda"
 	buildcustomizations "BuildCustomizations/CUDA 11.7"
 
 	-- CUDA specific properties
-	cudaFiles {"sandbox/HelloCuda/" .. SOURCE_DIR .. "*.cu"} -- files NVCC compiles
+	cudaFiles {"sandbox/HelloCudaDP/" .. SOURCE_DIR .. "*.cu"} -- files NVCC compiles
 	cudaMaxRegCount "32"
 
 	-- Let's compile for all supported architectures (and also in parallel with -t0)
@@ -42,6 +42,7 @@ project  "HelloCuda"
 
 
 	filter "system:windows"
+		cudaRelocatableCode "On" 
 		staticruntime "On"
 		systemversion "latest"
 		defines {"_CRT_SECURE_NO_WARNINGS", "__WINDOWS_WASAPI__", "NOMINMAX",

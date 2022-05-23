@@ -122,6 +122,7 @@ project "Core"
     
 
 	include "sandbox/HelloCuda"
+	include "sandbox/HelloCudaDP"
 	include "sandbox/HelloStaticCudaDP"
 	include "sandbox/HelloWorld"
 

@@ -1,8 +1,8 @@
 #include "Jahley.h"
 
-const std::string APP_NAME = "HelloCuda";
+const std::string APP_NAME = "HelloCudaDP";
 
-int runKernel(); 
+int runKernel();
 
 class Application : public Jahley::App
 {
@@ -13,7 +13,11 @@ class Application : public Jahley::App
         try
         {
             LOG (DBUG) << "Hello CPU!";
-            runKernel();
+            int result = runKernel();
+            if (result == 1)
+            {
+                LOG (CRITICAL) << "Cuda Dynamic Parallelism failed";
+            }
         }
         catch (std::exception& e)
         {
