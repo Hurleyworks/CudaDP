@@ -1,6 +1,6 @@
 local ROOT = "../../"
 
-project  "HelloCudaDP"
+project  "HelloStaticCudaDP"
 	if _ACTION == "vs2019" then
 		cppdialect "C++17"
 		location (ROOT .. "builds/VisualStudio2019/projects")

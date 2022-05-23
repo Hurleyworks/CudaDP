@@ -121,7 +121,8 @@ project "Core"
         defines {"USE_DEBUG_EXCEPTIONS"}
     
 
-	include "sandbox/HelloCudaDP"
+	include "sandbox/HelloCuda"
+	include "sandbox/HelloStaticCudaDP"
 	include "sandbox/HelloWorld"
 
 	

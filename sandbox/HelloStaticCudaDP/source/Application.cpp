@@ -1,6 +1,6 @@
 #include "Jahley.h"
 
-const std::string APP_NAME = "HelloCudaDP";
+const std::string APP_NAME = "HelloStaticCudaDP";
 
 int callKernel (int digit);
 

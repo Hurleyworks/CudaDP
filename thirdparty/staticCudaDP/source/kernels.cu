@@ -2,6 +2,8 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 
+// good tutorial
+// https://www.youtube.com/watch?v=vP2boVIlfPA&list=PLnqGt7opCGJEg8qNdJBOfbVr7QZnmUYEq&index=5&ab_channel=Udacity
 
 __global__ void child_k (void)
 {
